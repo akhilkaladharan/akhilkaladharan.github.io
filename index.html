@@ -4,72 +4,137 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Akhil | DevOps Engineer</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #020617;
       color: #e2e8f0;
+      overflow-x: hidden;
     }
 
     header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #1e293b, #0f172a);
+      background: radial-gradient(circle at top, #1e293b, #020617);
+      animation: fadeIn 2s ease-in-out;
     }
 
     header h1 {
-      font-size: 40px;
-      margin: 0;
+      font-size: 50px;
+      animation: slideDown 1.5s ease;
     }
 
     header p {
       color: #94a3b8;
+      margin-top: 10px;
+      animation: fadeIn 3s ease;
     }
 
     section {
-      padding: 40px 20px;
-      max-width: 900px;
+      padding: 60px 20px;
+      max-width: 1000px;
       margin: auto;
     }
 
     h2 {
-      border-left: 4px solid #38bdf8;
-      padding-left: 10px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      width: 50px;
+      height: 3px;
+      background: #38bdf8;
+      position: absolute;
+      left: 0;
+      bottom: -8px;
     }
 
     .skills span {
       display: inline-block;
       background: #1e293b;
-      margin: 5px;
-      padding: 8px 12px;
-      border-radius: 20px;
-      font-size: 14px;
+      margin: 8px;
+      padding: 10px 15px;
+      border-radius: 25px;
+      transition: 0.3s;
+    }
+
+    .skills span:hover {
+      background: #38bdf8;
+      color: black;
+      transform: scale(1.1);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
     .project {
       background: #1e293b;
       padding: 20px;
-      margin: 15px 0;
-      border-radius: 10px;
-      transition: 0.3s;
+      border-radius: 15px;
+      transition: 0.4s;
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    .project.show {
+      transform: translateY(0);
+      opacity: 1;
     }
 
     .project:hover {
-      transform: scale(1.03);
+      transform: translateY(-10px) scale(1.03);
       background: #334155;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #38bdf8;
+      color: black;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #0ea5e9;
+      transform: scale(1.1);
     }
 
     footer {
       text-align: center;
       padding: 20px;
       background: #020617;
-      font-size: 14px;
     }
 
-    a {
-      color: #38bdf8;
-      text-decoration: none;
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;} to {opacity: 1;}
+    }
+
+    @keyframes slideDown {
+      from {transform: translateY(-50px); opacity: 0;} 
+      to {transform: translateY(0); opacity: 1;}
     }
 
   </style>
@@ -79,11 +144,12 @@
 <header>
   <h1>Akhil K</h1>
   <p>DevOps Engineer | AWS | Docker | Jenkins | Ansible</p>
+  <a href="#projects" class="btn">View My Work</a>
 </header>
 
 <section>
   <h2>About Me</h2>
-  <p>I am a DevOps enthusiast with hands-on experience in CI/CD, cloud deployment, and monitoring systems.</p>
+  <p>I build scalable CI/CD pipelines, automate infrastructure, and deploy cloud-native applications using DevOps best practices.</p>
 </section>
 
 <section>
@@ -94,26 +160,32 @@
     <span>AWS</span>
     <span>Ansible</span>
     <span>Linux</span>
-    <span>Git</span>
+    <span>Prometheus</span>
+    <span>Grafana</span>
   </div>
 </section>
 
-<section>
+<section id="projects">
   <h2>Projects</h2>
 
-  <div class="project">
-    <h3>CI/CD Pipeline</h3>
-    <p>Built Jenkins pipeline to automate build and deployment using Docker.</p>
-  </div>
+  <div class="projects">
+    <div class="project">
+      <img src="images/cicd.png" alt="CI/CD Pipeline" style="width:100%; border-radius:10px; margin-bottom:10px;">
+      <h3>CI/CD Pipeline</h3>
+      <p>Automated build & deployment using Jenkins and Docker.</p>
+    </div>
 
-  <div class="project">
-    <h3>AWS Deployment</h3>
-    <p>Deployed containerized app on EC2 with monitoring using Prometheus and Grafana.</p>
-  </div>
+    <div class="project">
+      <img src="images/aws.png" alt="AWS Deployment" style="width:100%; border-radius:10px; margin-bottom:10px;">
+      <h3>AWS Deployment</h3>
+      <p>Deployed containerized app on EC2 with monitoring.</p>
+    </div>
 
-  <div class="project">
-    <h3>Monitoring Stack</h3>
-    <p>Implemented Prometheus & Grafana with Node Exporter for system metrics.</p>
+    <div class="project">
+      <img src="images/monitoring.png" alt="Monitoring Stack" style="width:100%; border-radius:10px; margin-bottom:10px;">
+      <h3>Monitoring Stack</h3>
+      <p>Prometheus + Grafana with Node Exporter.</p>
+    </div>
   </div>
 
 </section>
@@ -121,13 +193,29 @@
 <section>
   <h2>Contact</h2>
   <p>Email: your@email.com</p>
-  <p>GitHub: <a href="#">yourgithublink</a></p>
-  <p>LinkedIn: <a href="#">yourlinkedinlink</a></p>
+  <a href="#" class="btn">GitHub</a>
+  <a href="#" class="btn">LinkedIn</a>
 </section>
 
 <footer>
   <p>© 2026 Akhil K</p>
 </footer>
+
+<script>
+  const projects = document.querySelectorAll('.project');
+
+  window.addEventListener('scroll', () => {
+    const triggerBottom = window.innerHeight * 0.8;
+
+    projects.forEach(project => {
+      const boxTop = project.getBoundingClientRect().top;
+
+      if (boxTop < triggerBottom) {
+        project.classList.add('show');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
