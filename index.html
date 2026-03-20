@@ -16,10 +16,36 @@
       font-family: 'Poppins', sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background: #020617;
       color: #e2e8f0;
-      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(2,6,23,0.9);
+      backdrop-filter: blur(10px);
+      padding: 15px;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #e2e8f0;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
     }
 
     header {
@@ -30,7 +56,6 @@
       align-items: center;
       text-align: center;
       background: radial-gradient(circle at top, #1e293b, #020617);
-      animation: fadeIn 2s ease-in-out;
     }
 
     header h1 {
@@ -38,14 +63,13 @@
       animation: slideDown 1.5s ease;
     }
 
-    header p {
+    #typing {
       color: #94a3b8;
       margin-top: 10px;
-      animation: fadeIn 3s ease;
     }
 
     section {
-      padding: 60px 20px;
+      padding: 80px 20px;
       max-width: 1000px;
       margin: auto;
     }
@@ -87,7 +111,9 @@
     }
 
     .project {
-      background: #1e293b;
+      background: rgba(30, 41, 59, 0.5);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
       padding: 20px;
       border-radius: 15px;
       transition: 0.4s;
@@ -102,12 +128,12 @@
 
     .project:hover {
       transform: translateY(-10px) scale(1.03);
-      background: #334155;
+      box-shadow: 0 0 20px #38bdf8;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 15px;
       padding: 10px 20px;
       background: #38bdf8;
       color: black;
@@ -124,35 +150,44 @@
     footer {
       text-align: center;
       padding: 20px;
-      background: #020617;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from {opacity: 0;} to {opacity: 1;}
     }
 
     @keyframes slideDown {
-      from {transform: translateY(-50px); opacity: 0;} 
+      from {transform: translateY(-50px); opacity: 0;}
       to {transform: translateY(0); opacity: 1;}
     }
-
   </style>
 </head>
+
 <body>
 
+<!-- Navbar -->
+<nav>
+  <a href="#">Home</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- Header -->
 <header>
   <h1>Akhil K</h1>
-  <p>DevOps Engineer | AWS | Docker | Jenkins | Ansible</p>
+  <p id="typing"></p>
   <a href="#projects" class="btn">View My Work</a>
+  <a href="resume.pdf" download class="btn">Download Resume</a>
 </header>
 
-<section>
+<!-- About -->
+<section id="about">
   <h2>About Me</h2>
-  <p>I build scalable CI/CD pipelines, automate infrastructure, and deploy cloud-native applications using DevOps best practices.</p>
+  <p>
+    I build scalable CI/CD pipelines, automate infrastructure, and deploy cloud-native applications using DevOps best practices.
+  </p>
 </section>
 
-<section>
+<!-- Skills -->
+<section id="skills">
   <h2>Skills</h2>
   <div class="skills">
     <span>Docker</span>
@@ -165,43 +200,65 @@
   </div>
 </section>
 
+<!-- Projects -->
 <section id="projects">
   <h2>Projects</h2>
 
   <div class="projects">
+
     <div class="project">
-      <img src="images/cicd.png" alt="CI/CD Pipeline" style="width:100%; border-radius:10px; margin-bottom:10px;">
+      <img src="images/cicd.png" style="width:100%; border-radius:10px;">
       <h3>CI/CD Pipeline</h3>
       <p>Automated build & deployment using Jenkins and Docker.</p>
+      <a href="https://github.com/yourrepo1" target="_blank" class="btn">View Project</a>
     </div>
 
     <div class="project">
-      <img src="images/aws.png" alt="AWS Deployment" style="width:100%; border-radius:10px; margin-bottom:10px;">
+      <img src="images/aws.png" style="width:100%; border-radius:10px;">
       <h3>AWS Deployment</h3>
       <p>Deployed containerized app on EC2 with monitoring.</p>
+      <a href="https://github.com/yourrepo2" target="_blank" class="btn">View Project</a>
     </div>
 
     <div class="project">
-      <img src="images/monitoring.png" alt="Monitoring Stack" style="width:100%; border-radius:10px; margin-bottom:10px;">
+      <img src="images/monitoring.png" style="width:100%; border-radius:10px;">
       <h3>Monitoring Stack</h3>
       <p>Prometheus + Grafana with Node Exporter.</p>
+      <a href="https://github.com/yourrepo3" target="_blank" class="btn">View Project</a>
     </div>
+
   </div>
-
 </section>
 
-<section>
+<!-- Contact -->
+<section id="contact">
   <h2>Contact</h2>
-  <p>Email: your@email.com</p>
-  <a href="#" class="btn">GitHub</a>
-  <a href="#" class="btn">LinkedIn</a>
+  <p>Email: akhil@email.com</p>
+  <a href="https://github.com/yourusername" target="_blank" class="btn">GitHub</a>
+  <a href="https://linkedin.com/in/yourprofile" target="_blank" class="btn">LinkedIn</a>
 </section>
 
+<!-- Footer -->
 <footer>
   <p>© 2026 Akhil K</p>
 </footer>
 
+<!-- Scripts -->
 <script>
+  // Typing Effect
+  const text = "DevOps Engineer | AWS | Docker | Jenkins | Ansible";
+  let i = 0;
+
+  function typeEffect() {
+    if (i < text.length) {
+      document.getElementById("typing").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeEffect, 50);
+    }
+  }
+  typeEffect();
+
+  // Scroll Animation
   const projects = document.querySelectorAll('.project');
 
   window.addEventListener('scroll', () => {
