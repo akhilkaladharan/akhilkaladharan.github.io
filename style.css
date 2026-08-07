@@ -631,3 +631,218 @@ body::before{
   .hero{ padding-top: 100px; }
   .footer-inner{ flex-direction: column; gap: 8px; text-align: center; }
 }
+
+/* =========================================================
+   DEVOPS SKILLS
+   ========================================================= */
+
+.skills-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 42px 50px;
+    margin-top: 45px;
+}
+
+.skills-group {
+    min-width: 0;
+}
+
+.skills-group-title {
+    margin: 0 0 18px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+/* Individual skill */
+
+.skill-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    min-height: 48px;
+    padding: 9px 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    font-family: "Inter", sans-serif;
+    font-size: 0.86rem;
+    font-weight: 500;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.skill-chip:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+
+/* Real technology logos */
+
+.skill-chip > img {
+    width: 25px;
+    height: 25px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+
+/* Generic icon container */
+
+.skill-icon {
+    width: 25px;
+    height: 25px;
+
+    flex: 0 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Terminal-style icon */
+
+.terminal-icon {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* SSH / generic terminal */
+
+.custom-icon {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* Network icons */
+
+.network-icon svg,
+.docker-compose-icon svg,
+.monitoring-icon svg {
+    width: 25px;
+    height: 25px;
+
+    fill: none;
+    stroke: currentColor;
+
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* AWS service labels */
+
+.aws-icon {
+    width: 31px;
+    height: 25px;
+
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+
+    border: 1px solid currentColor;
+}
+
+
+/* Docker Compose */
+
+.docker-compose-icon svg {
+    stroke-width: 1.5;
+}
+
+
+/* Monitoring */
+
+.monitoring-icon svg {
+    stroke-width: 1.8;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .skills-columns {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .skills-columns {
+        margin-top: 30px;
+    }
+
+    .skills-grid {
+        gap: 8px;
+    }
+
+    .skill-chip {
+        min-height: 44px;
+        padding: 8px 11px;
+        font-size: 0.8rem;
+    }
+
+    .skill-chip > img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .skill-icon {
+        width: 22px;
+        height: 22px;
+        flex-basis: 22px;
+    }
+
+    .network-icon svg,
+    .docker-compose-icon svg,
+    .monitoring-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .aws-icon {
+        width: 28px;
+        height: 22px;
+        font-size: 8px;
+    }
+
+}
