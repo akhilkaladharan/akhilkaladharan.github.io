@@ -4,241 +4,704 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Akhil K — DevOps Engineer</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- ===== Custom cursor dot (decorative, ignored on touch) ===== -->
 <div class="cursor-dot" id="cursorDot"></div>
 
-<!-- ===== Nav ===== -->
+<!-- ===== Navigation ===== -->
 <nav class="nav" id="nav">
-  <div class="nav-inner">
-    <a href="#top" class="nav-logo">AR<span class="dot">.</span></a>
-    <div class="nav-links">
-      <a href="#about"><span class="cmd">01</span>about</a>
-      <a href="#skills"><span class="cmd">02</span>stack</a>
-      <a href="#projects"><span class="cmd">03</span>projects</a>
-      <a href="#contact"><span class="cmd">04</span>contact</a>
+    <div class="nav-inner">
+
+        <a href="#top" class="nav-logo">
+            AK<span class="dot">.</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="#about"><span class="cmd">01</span>about</a>
+            <a href="#skills"><span class="cmd">02</span>stack</a>
+            <a href="#projects"><span class="cmd">03</span>projects</a>
+            <a href="#contact"><span class="cmd">04</span>contact</a>
+        </div>
+
+        <a href="#contact" class="nav-cta">let's talk</a>
+
+        <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
     </div>
-    <a href="#contact" class="nav-cta">let's talk</a>
-    <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
 </nav>
 
-<!-- ===== Hero / Terminal ===== -->
+
+<!-- ===== Hero ===== -->
 <header class="hero" id="top">
-  <div class="hero-glow"></div>
-  <div class="hero-inner">
-    <div class="hero-copy">
-      <p class="eyebrow">// full-stack engineer</p>
-      <h1 class="hero-title">
-        Building things<br>
-        that live on the <span class="highlight">internet</span><span class="caret">_</span>
-      </h1>
-      <p class="hero-sub">
-        I'm Alex — I design and build fast, accessible web apps, from database
-        schema to the last pixel of the UI. Currently shipping product at a
-        seed-stage startup, previously an SRE who got tired of putting out fires.
-      </p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">View projects</a>
-        <a href="assets/resume.pdf" class="btn btn-ghost" download>Download résumé</a>
-      </div>
-      <div class="hero-meta">
-        <span class="pulse-dot"></span> Open to new opportunities · Kerala, IN (Remote)
-      </div>
+
+    <div class="hero-glow"></div>
+
+    <div class="hero-inner">
+
+        <div class="hero-copy">
+
+            <p class="eyebrow">// devops engineer</p>
+
+            <h1 class="hero-title">
+                Automating systems<br>
+                that <span class="highlight">scale</span><span class="caret">_</span>
+            </h1>
+
+            <p class="hero-sub">
+                I'm Akhil — a DevOps-focused engineer passionate about Linux,
+                cloud infrastructure, containerization, CI/CD, automation,
+                and reliable deployments.
+            </p>
+
+            <div class="hero-actions">
+
+                <a href="#projects" class="btn btn-primary">
+                    View projects
+                </a>
+
+                <a href="assets/resume.pdf"
+                   class="btn btn-ghost"
+                   download>
+                    Download résumé
+                </a>
+
+            </div>
+
+            <div class="hero-meta">
+                <span class="pulse-dot"></span>
+                Open to DevOps opportunities · Kerala, IN
+            </div>
+
+        </div>
+
+
+        <!-- Terminal -->
+        <div class="terminal"
+             role="img"
+             aria-label="Terminal window showing DevOps commands">
+
+            <div class="terminal-bar">
+
+                <span class="tb-dot red"></span>
+                <span class="tb-dot yellow"></span>
+                <span class="tb-dot green"></span>
+
+                <span class="terminal-title">
+                    akhil@devops — bash
+                </span>
+
+            </div>
+
+            <div class="terminal-body">
+
+                <p>
+                    <span class="prompt">$</span> whoami
+                </p>
+
+                <p class="out">
+                    akhil_k — devops engineer
+                </p>
+
+                <p>
+                    <span class="prompt">$</span> cat focus.txt
+                </p>
+
+                <p class="out">
+                    linux · cloud · automation
+                </p>
+
+                <p class="out">
+                    docker · kubernetes · ci/cd
+                </p>
+
+                <p>
+                    <span class="prompt">$</span> ./deploy.sh
+                </p>
+
+                <p class="out ok">
+                    ✓ infrastructure .... ready
+                </p>
+
+                <p class="out ok">
+                    ✓ containers ........ running
+                </p>
+
+                <p class="out ok">
+                    ✓ deployment ........ successful
+                </p>
+
+                <p class="out">
+                    <span class="type-cursor"></span>
+                </p>
+
+            </div>
+        </div>
+
     </div>
 
-    <div class="terminal" role="img" aria-label="Terminal window showing whoami command output">
-      <div class="terminal-bar">
-        <span class="tb-dot red"></span><span class="tb-dot yellow"></span><span class="tb-dot green"></span>
-        <span class="terminal-title">alex@portfolio — zsh</span>
-      </div>
-      <div class="terminal-body">
-        <p><span class="prompt">$</span> whoami</p>
-        <p class="out">alex_rivera — software engineer</p>
-        <p><span class="prompt">$</span> cat focus.txt</p>
-        <p class="out">frontend systems · developer experience</p>
-        <p class="out">distributed backends · design engineering</p>
-        <p><span class="prompt">$</span> ./run-portfolio.sh</p>
-        <p class="out ok">✓ profile ......... loaded</p>
-        <p class="out ok">✓ skills .......... 14 found</p>
-        <p class="out ok">✓ projects ........ 3 featured</p>
-        <p class="out"><span class="type-cursor"></span></p>
-      </div>
-    </div>
-  </div>
-  <a href="#about" class="scroll-hint" aria-label="Scroll down"><span></span></a>
+    <a href="#about"
+       class="scroll-hint"
+       aria-label="Scroll down">
+        <span></span>
+    </a>
+
 </header>
+
 
 <main>
 
-  <!-- ===== About ===== -->
-  <section class="section" id="about">
+<!-- ===== About ===== -->
+<section class="section" id="about">
+
     <div class="section-inner about-grid">
-      <div class="about-media">
-        <div class="avatar-frame">
-          <img src="assets/profile.jpg" alt="Portrait of Alex Rivera" class="avatar-img" id="avatarImg">
-          <div class="avatar-fallback" id="avatarFallback">AR</div>
-        </div>
-        <div class="about-tag">based in Kerala, IN</div>
-      </div>
-      <div class="about-copy">
-        <p class="section-label"><span class="cmd">01</span> about</p>
-        <h2 class="section-title">A little about how I work.</h2>
-        <p class="about-text">
-          I care about the boring parts most people skip: error states, loading
-          states, the thing that breaks when the network is slow. Good software
-          is invisible when it works and honest when it doesn't.
-        </p>
-        <p class="about-text">
-          Outside of shipping features, I write about performance and DX,
-          contribute to a couple of open-source tools, and I'm slowly working
-          through a personal rule: no library without reading its source first.
-        </p>
-        <ul class="about-facts">
-          <li><span>4+</span> years building production software</li>
-          <li><span>20+</span> projects shipped, from MVPs to scale</li>
-          <li><span>3</span> teams mentored on frontend architecture</li>
-        </ul>
-      </div>
-    </div>
-  </section>
 
-  <!-- ===== Skills ===== -->
-  <section class="section section-alt" id="skills">
+        <div class="about-media">
+
+            <div class="avatar-frame">
+
+                <img src="assets/profile.jpg"
+                     alt="Akhil K - DevOps Engineer"
+                     class="avatar-img"
+                     id="avatarImg">
+
+                <div class="avatar-fallback"
+                     id="avatarFallback">
+                    AK
+                </div>
+
+            </div>
+
+            <div class="about-tag">
+                based in Kerala, IN
+            </div>
+
+        </div>
+
+
+        <div class="about-copy">
+
+            <p class="section-label">
+                <span class="cmd">01</span> about
+            </p>
+
+            <h2 class="section-title">
+                Building reliable infrastructure.
+            </h2>
+
+            <p class="about-text">
+                I am a DevOps-focused engineer with hands-on experience
+                working with Linux systems, cloud infrastructure,
+                containers, Kubernetes, CI/CD pipelines, and automation.
+            </p>
+
+            <p class="about-text">
+                I enjoy automating repetitive tasks, deploying applications,
+                managing infrastructure, monitoring systems, and improving
+                reliability through practical DevOps tools and workflows.
+            </p>
+
+            <ul class="about-facts">
+
+                <li>
+                    <span>Linux</span>
+                    System administration & troubleshooting
+                </li>
+
+                <li>
+                    <span>AWS</span>
+                    Cloud infrastructure & services
+                </li>
+
+                <li>
+                    <span>DevOps</span>
+                    CI/CD, containers & automation
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== Skills ===== -->
+<section class="section section-alt" id="skills">
+
     <div class="section-inner">
-      <p class="section-label"><span class="cmd">02</span> stack</p>
-      <h2 class="section-title">$ skills --list</h2>
-      <p class="section-sub">Tools I reach for daily, grouped by where they live in the stack.</p>
 
-      <div class="skills-columns">
-        <div class="skills-group">
-          <h3 class="skills-group-title">Frontend</h3>
-          <div class="skills-grid">
-            <div class="skill-chip"><img src="https://cdn.simpleicons.org/react" alt=""><span>React</span></div>
-            <div class="skill-chip"><img src="https://cdn.simpleicons.org/typescript" alt=""><span>TypeScript</span></div>
-            <div class="skill-chip"><img src="https://cdn.simpleicons.org/nextdotjs/e7e9ee" alt=""><span>Next.js</span></div>
-            <div class="skill-chip"><img src="https://cdn.simpleicons.org/tailwindcss" alt=""><span>Tailwind</span></div>
-          </div>
+        <p class="section-label">
+            <span class="cmd">02</span> stack
+        </p>
+
+        <h2 class="section-title">
+            $ skills --list
+        </h2>
+
+        <p class="section-sub">
+            Tools and technologies I use for infrastructure,
+            automation, deployment, and monitoring.
+        </p>
+
+
+        <div class="skills-columns">
+
+
+            <!-- Linux -->
+            <div class="skills-group">
+
+                <h3 class="skills-group-title">
+                    Linux & Networking
+                </h3>
+
+                <div class="skills-grid">
+
+                    <div class="skill-chip">
+                        <span>Linux</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>Ubuntu</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>Rocky Linux</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>SSH</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>TCP/IP</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>DNS</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Cloud -->
+            <div class="skills-group">
+
+                <h3 class="skills-group-title">
+                    Cloud & Infrastructure
+                </h3>
+
+                <div class="skills-grid">
+
+                    <div class="skill-chip">
+                        <span>AWS</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>EC2</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>S3</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>IAM</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>VPC</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>Terraform</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Containers -->
+            <div class="skills-group">
+
+                <h3 class="skills-group-title">
+                    Containers & Kubernetes
+                </h3>
+
+                <div class="skills-grid">
+
+                    <div class="skill-chip">
+                        <span>Docker</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>Docker Compose</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>Kubernetes</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>Minikube</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>EKS</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>Helm</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CI/CD -->
+            <div class="skills-group">
+
+                <h3 class="skills-group-title">
+                    CI/CD & Automation
+                </h3>
+
+                <div class="skills-grid">
+
+                    <div class="skill-chip">
+                        <span>Jenkins</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>GitHub Actions</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>Ansible</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>Bash</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>Git</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>GitHub</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Monitoring -->
+            <div class="skills-group">
+
+                <h3 class="skills-group-title">
+                    Monitoring
+                </h3>
+
+                <div class="skills-grid">
+
+                    <div class="skill-chip">
+                        <span>Prometheus</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>Grafana</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>Node Exporter</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>Loki</span>
+                    </div>
+
+                    <div class="skill-chip">
+                        <span>Promtail</span>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-        <div class="skills-group">
-          <h3 class="skills-group-title">Backend</h3>
-          <div class="skills-grid">
-            <div class="skill-chip"><img src="https://cdn.simpleicons.org/nodedotjs" alt=""><span>Node.js</span></div>
-            <div class="skill-chip"><img src="https://cdn.simpleicons.org/python" alt=""><span>Python</span></div>
-            <div class="skill-chip"><img src="https://cdn.simpleicons.org/postgresql" alt=""><span>PostgreSQL</span></div>
-            <div class="skill-chip"><img src="https://cdn.simpleicons.org/redis" alt=""><span>Redis</span></div>
-          </div>
-        </div>
-        <div class="skills-group">
-          <h3 class="skills-group-title">Infra &amp; tools</h3>
-          <div class="skills-grid">
-            <div class="skill-chip"><img src="https://cdn.simpleicons.org/docker" alt=""><span>Docker</span></div>
-            <div class="skill-chip"><img src="https://cdn.simpleicons.org/amazonaws/e7e9ee" alt=""><span>AWS</span></div>
-            <div class="skill-chip"><img src="https://cdn.simpleicons.org/git" alt=""><span>Git</span></div>
-            <div class="skill-chip"><img src="https://cdn.simpleicons.org/figma" alt=""><span>Figma</span></div>
-          </div>
-        </div>
-      </div>
+
     </div>
-  </section>
 
-  <!-- ===== Projects ===== -->
-  <section class="section" id="projects">
+</section>
+
+
+<!-- ===== Projects ===== -->
+<section class="section" id="projects">
+
     <div class="section-inner">
-      <p class="section-label"><span class="cmd">03</span> projects</p>
-      <h2 class="section-title">Selected work.</h2>
 
-      <div class="projects-list">
+        <p class="section-label">
+            <span class="cmd">03</span> projects
+        </p>
 
-        <article class="project-card">
-          <div class="project-index">01</div>
-          <div class="project-body">
-            <h3>Pulse — Real-time analytics dashboard</h3>
-            <p>A self-hostable analytics tool built for teams who don't want to
-              ship user data to a third party. Streams events over WebSockets
-              and renders sub-second charts for 100k+ concurrent sessions.</p>
-            <div class="project-tags">
-              <span>React</span><span>Node.js</span><span>WebSockets</span><span>PostgreSQL</span>
-            </div>
-          </div>
-          <div class="project-links">
-            <a href="#" class="proj-link">Live ↗</a>
-            <a href="#" class="proj-link">Code ↗</a>
-          </div>
-        </article>
+        <h2 class="section-title">
+            DevOps projects.
+        </h2>
 
-        <article class="project-card">
-          <div class="project-index">02</div>
-          <div class="project-body">
-            <h3>Kanbou — Lightweight project boards</h3>
-            <p>A Trello-style board app with offline-first sync, built to
-              learn CRDTs properly. Handles conflict resolution across devices
-              without a central write lock.</p>
-            <div class="project-tags">
-              <span>TypeScript</span><span>CRDT</span><span>IndexedDB</span><span>Next.js</span>
-            </div>
-          </div>
-          <div class="project-links">
-            <a href="#" class="proj-link">Live ↗</a>
-            <a href="#" class="proj-link">Code ↗</a>
-          </div>
-        </article>
 
-        <article class="project-card">
-          <div class="project-index">03</div>
-          <div class="project-body">
-            <h3>Reflow — CLI for API mock servers</h3>
-            <p>A zero-config CLI that spins up a mock API from an OpenAPI
-              spec in under a second, with request recording and replay
-              built in. Used internally by three teams for contract testing.</p>
-            <div class="project-tags">
-              <span>Python</span><span>OpenAPI</span><span>Docker</span><span>CLI</span>
-            </div>
-          </div>
-          <div class="project-links">
-            <a href="#" class="proj-link">Live ↗</a>
-            <a href="#" class="proj-link">Code ↗</a>
-          </div>
-        </article>
+        <div class="projects-list">
 
-      </div>
+
+            <!-- Project 1 -->
+            <article class="project-card">
+
+                <div class="project-index">
+                    01
+                </div>
+
+                <div class="project-body">
+
+                    <h3>
+                        Linux Server Administration Lab
+                    </h3>
+
+                    <p>
+                        Built and managed Linux servers with user
+                        administration, SSH access, permissions,
+                        services, firewall configuration, Nginx,
+                        Apache, and system troubleshooting.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Linux</span>
+                        <span>Rocky Linux</span>
+                        <span>SSH</span>
+                        <span>Nginx</span>
+                        <span>Bash</span>
+                    </div>
+
+                </div>
+
+                <div class="project-links">
+
+                    <a href="#" class="proj-link">
+                        Code ↗
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- Project 2 -->
+            <article class="project-card">
+
+                <div class="project-index">
+                    02
+                </div>
+
+                <div class="project-body">
+
+                    <h3>
+                        CI/CD Pipeline for Node.js Application
+                    </h3>
+
+                    <p>
+                        Built an automated CI/CD workflow using Jenkins,
+                        Docker, and Kubernetes to build container images,
+                        push them to Docker Hub, and deploy applications
+                        to a Kubernetes environment.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Jenkins</span>
+                        <span>Docker</span>
+                        <span>Kubernetes</span>
+                        <span>Git</span>
+                        <span>Docker Hub</span>
+                    </div>
+
+                </div>
+
+                <div class="project-links">
+
+                    <a href="#" class="proj-link">
+                        Code ↗
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- Project 3 -->
+            <article class="project-card">
+
+                <div class="project-index">
+                    03
+                </div>
+
+                <div class="project-body">
+
+                    <h3>
+                        AWS Infrastructure with Terraform & Kubernetes
+                    </h3>
+
+                    <p>
+                        Provisioned cloud infrastructure using Terraform
+                        and deployed containerized applications on
+                        Kubernetes. Implemented AWS networking,
+                        EKS, application deployment, and monitoring
+                        with Prometheus and Grafana.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>AWS</span>
+                        <span>Terraform</span>
+                        <span>EKS</span>
+                        <span>Kubernetes</span>
+                        <span>Prometheus</span>
+                        <span>Grafana</span>
+                    </div>
+
+                </div>
+
+                <div class="project-links">
+
+                    <a href="#" class="proj-link">
+                        Code ↗
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- Project 4 -->
+            <article class="project-card">
+
+                <div class="project-index">
+                    04
+                </div>
+
+                <div class="project-body">
+
+                    <h3>
+                        Linux Monitoring & Log Management
+                    </h3>
+
+                    <p>
+                        Implemented system monitoring using Prometheus,
+                        Grafana, and Node Exporter. Built dashboards
+                        to monitor system resources and explored
+                        centralized log collection using Loki and Promtail.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Prometheus</span>
+                        <span>Grafana</span>
+                        <span>Node Exporter</span>
+                        <span>Loki</span>
+                        <span>Promtail</span>
+                    </div>
+
+                </div>
+
+                <div class="project-links">
+
+                    <a href="#" class="proj-link">
+                        Code ↗
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
     </div>
-  </section>
 
-  <!-- ===== Contact ===== -->
-  <section class="section section-contact" id="contact">
+</section>
+
+
+<!-- ===== Contact ===== -->
+<section class="section section-contact" id="contact">
+
     <div class="section-inner contact-inner">
-      <p class="section-label"><span class="cmd">04</span> contact</p>
-      <h2 class="section-title">Let's build something.</h2>
-      <p class="section-sub">
-        Open to full-time roles and select freelance work. The fastest way
-        to reach me is email — I read everything.
-      </p>
-      <a href="mailto:akhilkaladharan25@gmail.com" class="contact-email">akhilkaladharan25@gmail.com</a>
-      <div class="contact-socials">
-        <a href="#">GitHub</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Twitter / X</a>
-      </div>
+
+        <p class="section-label">
+            <span class="cmd">04</span> contact
+        </p>
+
+        <h2 class="section-title">
+            Let's build reliable systems.
+        </h2>
+
+        <p class="section-sub">
+            Open to junior DevOps, Linux, cloud, and infrastructure
+            opportunities. The fastest way to reach me is email.
+        </p>
+
+        <a href="mailto:akhilkaladharan25@gmail.com"
+           class="contact-email">
+            akhilkaladharan25@gmail.com
+        </a>
+
+        <div class="contact-socials">
+
+            <a href="#">
+                GitHub
+            </a>
+
+            <a href="#">
+                LinkedIn
+            </a>
+
+        </div>
+
     </div>
-  </section>
+
+</section>
 
 </main>
 
+
+<!-- ===== Footer ===== -->
 <footer class="footer">
-  <div class="section-inner footer-inner">
-    <span>© 2026 Alex Rivera. Built from scratch, no template.</span>
-    <a href="#top">back to top ↑</a>
-  </div>
+
+    <div class="section-inner footer-inner">
+
+        <span>
+            © 2026 Akhil K. Built for DevOps.
+        </span>
+
+        <a href="#top">
+            back to top ↑
+        </a>
+
+    </div>
+
 </footer>
 
+
 <script src="script.js"></script>
+
 </body>
 </html>
